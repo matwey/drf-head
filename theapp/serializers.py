@@ -4,3 +4,7 @@ from rest_framework import serializers
 
 class ModelSerializer(serializers.HyperlinkedModelSerializer):
 	url = serializers.HyperlinkedIdentityField(lookup_field='name', view_name='model-detail')
+
+	class Meta:
+		model = models.Model
+		fields = ('url', 'name',)
