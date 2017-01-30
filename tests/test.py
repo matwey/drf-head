@@ -13,6 +13,6 @@ class ModelTest(TestCase):
 	
 	def test_model_head1(self):
 		model = models.Model.objects.create(name="model1")
-		url = reverse('model-detail', args=('model',))
+		url = reverse('model-detail', args=('model1',))
 		response = self.client.head(url)
 		self.assertEqual(response.status_code, status.HTTP_200_OK)
